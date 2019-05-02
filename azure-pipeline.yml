@@ -1,5 +1,10 @@
+triggers:
+- master
+- develop
+
 pool:
   vmImage: 'Ubuntu-16.04'
+
 steps:
 - script: echo "This is sample pipeline"
 - script: echo "Build on master branch"
