@@ -6,3 +6,4 @@ pool:
 steps:
 - script: echo "This is sample pipeline"
 - script: echo "Build on master branch"
+- script: echo "Build output"
