@@ -1,10 +1,17 @@
 trigger:
 - master
 
-
 pool:
   vmImage: 'Ubuntu-16.04'
 
-steps:
-- script: echo "This is sample pipeline"
-- script: echo "Build on master branch"
+stages:
+- stage: First Stage
+  jobs:
+  - job: First job
+    steps:
+    - script: echo "First Stage job"
+- stage: Second Stage
+  jobs:
+  - job: second job
+    steps:
+    - script: echo "Second stage job"
