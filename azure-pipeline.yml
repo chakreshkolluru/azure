@@ -2,17 +2,11 @@ trigger:
 - master
 
 stages:
-- stage: First_Stage
+- stage: Maven jobs 
   jobs:
-  - job: First_job
+  - job: Clean and Package job
     pool:
       vmImage: 'Ubuntu-16.04'
     steps:
-    - script: echo "First Stage job"
-- stage: Second_Stage
-  jobs:
-  - job: second_job
-    pool:
-      vmImage: 'Ubuntu-16.04'
-    steps:
-    - script: echo "Second stage job"
+    - script: echo "Clean and Package job"
+    - script: mvn clean package
