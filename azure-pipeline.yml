@@ -9,7 +9,8 @@ stages:
       vmImage: 'Ubuntu-16.04'
     steps:
     - script: echo "Clean and Package job"
-    - script: mvn clean compile package --output $BUILD_ARTIFACTSTAGINGDIRECTORY
+    - script: mvn clean compile package 
+    - script: pwd
     #- script: cp /home/vsts/work/1/s/target/webAPP.war $BUILD_ARTIFACTSTAGINGDIRECTORY/
   - job: Publishes_Artifacts
     dependsOn: Clean_and_Package_job
