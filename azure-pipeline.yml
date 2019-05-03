@@ -11,7 +11,8 @@ stages:
     - script: echo "Clean and Package job"
     - script: mvn clean compile package 
     - script: pwd
-    #- script: cp /home/vsts/work/1/s/target/webAPP.war $BUILD_ARTIFACTSTAGINGDIRECTORY/
+    - script: cp /home/vsts/work/1/s/target/webAPP.war $BUILD_ARTIFACTSTAGINGDIRECTORY/
+    - script: ls -l $BUILD_ARTIFACTSTAGINGDIRECTORY
   - job: Publishes_Artifacts
     dependsOn: Clean_and_Package_job
     pool:
