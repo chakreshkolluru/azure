@@ -11,7 +11,7 @@ stages:
     steps:
     - script: echo "Clean and Package job"
     - script: mvn clean compile package 
-    - script: pwd
+    - script: hostname -I
     - script: cp /home/vsts/work/1/s/target/webAPP.war $BUILD_ARTIFACTSTAGINGDIRECTORY/
     - script: ls -l $BUILD_ARTIFACTSTAGINGDIRECTORY
  
