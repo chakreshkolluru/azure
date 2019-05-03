@@ -4,7 +4,7 @@ trigger:
 stages:
 - stage: Mavenjobs 
   jobs:
-  - job: Clean_and_Package job
+  - job: Clean_and_Package_job
     pool:
       vmImage: 'Ubuntu-16.04'
     steps:
