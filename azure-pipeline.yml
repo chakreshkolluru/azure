@@ -10,11 +10,15 @@ stages:
     steps:
     - script: echo "Clean and Package job"
     - script: mvn clean package
-    - script: mv /home/vsts/work/1/a/target/webAPP.war $BUILD_ARTIFACTSTAGINGDIRECTORY/    
+    #- script: mv /home/vsts/work/1/a/target/webAPP.war $BUILD_ARTIFACTSTAGINGDIRECTORY/    
   - job: Publishes_Artifacts
     pool:
       vmImage: 'Ubuntu-16.04'
     steps:
+    - task: CopyFiles@2
+      inputs:
+        contents: 'target/*'
+        targetFolder: $(Build.ArtifactStagingDirectory)
     - task: PublishBuildArtifacts@1
       inputs:
         pathtoPublish: '$(Build.ArtifactStagingDirectory)'
