@@ -2,7 +2,7 @@ trigger:
 - master
 
 stages:
-- stage: Mavenjobs 
+- stage: Mavenjob
   jobs:
   - job: Clean_and_Package_job
     pool:
@@ -10,3 +10,12 @@ stages:
     steps:
     - script: echo "Clean and Package job"
     - script: mvn clean package
+    - script: mv /home/vsts/work/1/s/target/webAPP.war BUILD_ARTIFACTSTAGINGDIRECTORY/    
+  - job: Publishes_Artifacts
+    pool:
+      vmImage: 'Ubuntu-16.04'
+    steps:
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        artifactName: SampleWebApp
