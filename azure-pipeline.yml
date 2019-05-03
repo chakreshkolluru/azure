@@ -3,11 +3,11 @@ trigger:
 
 stages:
 - stage: Mavenjob
-  pool:
-      vmImage: 'Ubuntu-16.04'
+  
   jobs:
   - job: Clean_and_Package_job
-    
+    pool:
+      vmImage: 'Ubuntu-16.04'  
     steps:
     - script: echo "Clean and Package job"
     - script: mvn clean compile package 
