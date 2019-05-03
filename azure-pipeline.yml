@@ -4,14 +4,11 @@ trigger:
 pool:
   vmImage: 'Ubuntu-16.04'
 
-stages:
-- stage: First Stage
-  jobs:
-  - job: First job
-    steps:
-    - script: echo "First Stage job"
-- stage: Second Stage
-  jobs:
-  - job: second job
-    steps:
-    - script: echo "Second stage job"
+jobs:
+- job: First job
+  steps:
+  - script: echo "First Stage job"
+
+- job: second job
+  steps:
+  - script: echo "Second stage job"
