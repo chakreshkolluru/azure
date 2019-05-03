@@ -1,15 +1,18 @@
 trigger:
 - master
 
-jobs:
-- job: First_job
-  pool:
-    vmImage: 'Ubuntu-16.04'
-  steps:
-  - script: echo "First Stage job"
-
-- job: second_job
-  pool:
-    vmImage: 'Ubuntu-16.04'
-  steps:
-  - script: echo "Second stage job"
+stages:
+- stage: First-Stage
+  jobs:
+  - job: First-job
+    pool:
+      vmImage: 'Ubuntu-16.04'
+    steps:
+    - script: echo "First Stage job"
+- stage: Second-Stage
+  jobs:
+  - job: second-job
+    pool:
+      vmImage: 'Ubuntu-16.04'
+    steps:
+    - script: echo "Second stage job"
