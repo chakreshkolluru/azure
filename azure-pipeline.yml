@@ -19,3 +19,5 @@ stages:
       inputs:
         pathtoPublish: '$(Build.ArtifactStagingDirectory)'
         artifactName: SampleWebApp
+    - script: docker build -t chakreshkolluru/azureWebApp:1.0 .
+    - script: docker run -d -p 8020:80 chakreshkolluru/azureWebApp:1.0
