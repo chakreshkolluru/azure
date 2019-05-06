@@ -21,4 +21,4 @@ stages:
         artifactName: SampleWebApp
     - script: docker build -t chakreshkolluru/azurewebapp:1.0 .
     - script: docker run -d -p 8020:80 chakreshkolluru/azurewebapp:1.0
-    - script: curl localhost:8020/webAPP
+    
