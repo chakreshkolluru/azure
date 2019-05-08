@@ -9,7 +9,7 @@ stages:
     pool:
       vmImage: 'Ubuntu-16.04'  
     steps:
-    - script: echo "Clean and Package job 1"
+    - script: echo "Clean and Package job 2"
     - script: mvn clean compile package 
     - script: cp /home/vsts/work/1/s/target/webAPP.war $BUILD_ARTIFACTSTAGINGDIRECTORY/
  
