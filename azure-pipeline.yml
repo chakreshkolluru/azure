@@ -11,14 +11,11 @@ stages:
     steps:
     - script: echo "Clean and Package job"
     - script: mvn clean compile package 
-    - script: hostname -I
     - script: cp /home/vsts/work/1/s/target/webAPP.war $BUILD_ARTIFACTSTAGINGDIRECTORY/
-    - script: ls -l $BUILD_ARTIFACTSTAGINGDIRECTORY
  
     - task: PublishBuildArtifacts@1
       inputs:
         pathtoPublish: '$(Build.ArtifactStagingDirectory)'
         artifactName: SampleWebApp
-    - script: docker build -t chakreshkolluru/azurewebapp:1.0 .
-    - script: docker run -d -p 8020:80 chakreshkolluru/azurewebapp:1.0
+    
     
